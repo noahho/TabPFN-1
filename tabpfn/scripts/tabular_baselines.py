@@ -178,7 +178,7 @@ def eval_complete_f(x, y, test_x, test_y, key, clf_, metric_used, seed, max_time
           catch_eval_exceptions=True,
           verbose=True,
           # The seed is deterministic but varies for each dataset and each split of it
-          max_evals=1000)
+          max_evals=10000)
       best_score = np.min([t['result']['loss'] for t in trials.trials])
       if best_score < default:
         best = space_eval(param_grid_hyperopt[key], best)
